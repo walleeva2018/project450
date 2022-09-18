@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block main %}
+<div class="bid">
+  <div class="frame">
+    <div class="nama">{{ session['name'] }}</div>
+    <div class="gooey">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+  </div>
+</div>
+<p align="center">
+  <a href="/create">
+    <button class="get-started">Create</button>
+  </a>
+</p>
+<div class="container-fluid">
+  <h1 class="mt-5">Your BlockChain</h1>
+</div>
+<!DOCTYPE html>
+
+<script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
+
+{% for i in range(id) %}
+<div class="container">
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <i class="fab fa-coin"></i>
+        <h3>{{ all_chain[i].name }}</h3>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="content">
+        <font size="25">
+          <p>
+            This blockchain is a Public Blockchain works in POW Netword ID :
+            .........................................{{ all_chain[i].id }}
+          </p></font
+        >
+        <a href="#" type="button">Be a Miner </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %} {% endblock %}

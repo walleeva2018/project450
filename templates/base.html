@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/369c45c001.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Block Flix</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="darkthemelandingpage.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="/">
+        <img
+          src="/static/block.jfif"
+          class="logo"
+          alt="logo"
+          width="150"
+          height="100"
+        />
+    </a>
+        <div class="left-nav">
+       <a href="/"> BLOCK FLIX</a>
+        </div>
+        <div class="right-nav">
+          <a href="/wallet">Wallet</a>
+          <a href="/discover">Discover</a>
+          <a href="/howto">How To</a>
+          <a href="/join">Create/Join</a>
+
+          {% if session['logging'] == "LogPut" %}
+          <a href="/user/signin"> Sign In</a>
+           {% else %}
+           <a href="/user/signout"> Sign Out </a>
+      {% endif %}
+        </div>
+      </div>
+    </header>
+    {% block main %}
+     {% endblock %}
+    </div>
+    <footer>
+      <div class="left">
+        <img
+          id="logo"
+          src="/static/block.jfif"
+          alt="logo"
+          width="100"
+          height="80"
+        />
+        <div class="left2">
+          <img
+            id="pin"
+            src="https://raw.githubusercontent.com/hammercait/fylo-dark-theme-landing-page/658fd0afb4462e6a7e94996ab981bb7d5b336997/images/icon-location.svg"
+            alt="location pin"
+          />
+          <p>
+            Sylhet Big School , Akhalia, sylhet, Bangladesh, earth , milky way , On the side of Alpha Centauri 
+          </p>
+        </div>
+      </div>
+      <div class="contact">
+        <div>
+          <img
+            src="https://raw.githubusercontent.com/hammercait/fylo-dark-theme-landing-page/658fd0afb4462e6a7e94996ab981bb7d5b336997/images/icon-phone.svg"
+            alt="phone"
+          />
+          <p>+8801759139913</p>
+        </div>
+        <div>
+          <img
+            src="https://raw.githubusercontent.com/hammercait/fylo-dark-theme-landing-page/658fd0afb4462e6a7e94996ab981bb7d5b336997/images/icon-email.svg"
+            alt="email"
+          />
+          <p>zubairahmedrafi37@gmail.com</p>
+        </div>
+      </div>
+      <ul class="info">
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li>Terms</li>
+
+      </ul>
+      <ul class="social">
+        <li><i class="fab fa-facebook-f"></i></li>
+        <li><i class="fab fa-twitter"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+      </ul>
+    </footer>
+  </body>
+</html>

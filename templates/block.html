@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block main %}
+
+<div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="login-box">
+    <h2>Validate the Block</h2>
+    <form method="POST">
+      <div class="user-box">
+        <label>Block Chain - {{ block.name }}</label>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="user-box">
+        <label>last proof - {{ block.last_block['proof'] }}</label>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="user-box">
+        <input type="text" name="proof" required="" />
+        <label>Enter Proof</label>
+      </div>
+      <div class="user-box">
+        <label>Minimum Fee - {{ block.minfee }}</label>
+      </div>
+      <br />
+      <a href="javascript:;" onclick="parentNode.submit();">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Mine
+      </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block main %}
+<table>
+  <caption>
+    <div class="page-color">Availabe Chains</div>
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Network Name</th>
+      <th scope="col">Consensus Algorithm</th>
+      <th scope="col">Minimum Fee</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in range(id) %} {% if all_chain[i].svalidated == False %}
+    <tr>
+      <td data-label="nid">{{ all_chain[i].id }}</td>
+      <td data-label="name">{{ all_chain[i].name }}</td>
+      <td data-label="Consensus Algorithm">{{ all_chain[i].consensus }}</td>
+      <td data-label="Fee">{{ all_chain[i].minfee }}</td>
+      <td data-label="Action">
+        <form method="POST">
+          <button
+            class="get-started"
+            type="submit"
+            name="submit_button"
+            value="{{ all_chain[i].id }}"
+          >
+            Mine/Validate
+          </button>
+        </form>
+      </td>
+    </tr>
+    {% endif %} {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

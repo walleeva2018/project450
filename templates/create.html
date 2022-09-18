@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block main %}
+<div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="login-box">
+    <h2>Create BlockChain</h2>
+    <form method="POST">
+      <div class="user-box">
+        <input type="text" name="coinname" required="" />
+        <label>Coin Name</label>
+      </div>
+      <div class="page-color">Choose one</div>
+      <div class="select">
+        <select name="infa">
+          <option value="inflation">With Inflation/Deflation</option>
+          <option value="deflation">Without Inflation/Deflation</option>
+        </select>
+      </div>
+      <br />
+      <div class="page-color">Select Block Chain type</div>
+      <div class="select">
+        <select name="chain">
+          <option value="public">Public Block Chain</option>
+          <option value="private">Privte Block Chain</option>
+          <option value="consrtium">Consortium Blockchain.</option>
+          <option value="hybrid">Hybrid Block Chain</option>
+        </select>
+      </div>
+      <br />
+      <div class="user-box">
+        <input type="number" name="minfee" required="" />
+        <label>Minimum Fee</label>
+      </div>
+      <br />
+      <a href="javascript:;" onclick="parentNode.submit();">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Create
+      </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

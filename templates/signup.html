@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block main %}
+
+<div id="feedback-form">
+    <h3 class="black-color">Register Now </h3>
+    <div class="red-color">{{ reply }}</div>
+    <div>
+      <form method="POST">
+        <input type="text" name="email" placeholder="Email"></input>
+        <input type="text" name="name" placeholder="Name"></input>
+        <input type="password" name="password" placeholder="Password"></input>
+        <label for="feedback-notify">Remind me about this event via SMS</label>
+        <input type="checkbox" id="feedback-notify" name="notify">
+        <input type="text" id="feedback-phone" name="phone" placeholder="Phone number"></input>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,187 @@
+{% extends 'base.html' %} {% block main %}
+
+<div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="centered">
+    <div class="neon">Balance : 201 Lebu</div>
+  </div>
+
+  <svg>
+    <defs>
+      <filter id="stroke">
+        <feMorphology
+          operator="dilate"
+          radius="1"
+          in="SourceGraphic"
+          result="outside"
+        />
+        <feMorphology
+          operator="dilate"
+          radius="2"
+          in="outside"
+          result="thickened"
+        />
+        <feComposite
+          operator="out"
+          in2="SourceGraphic"
+          in="thickened"
+          result="stroke"
+        />
+      </filter>
+
+      <filter id="inner-glow">
+        <feFlood flood-color="#e10b8d" />
+        <feComposite in2="SourceAlpha" operator="out" />
+        <feGaussianBlur stdDeviation="0.5" result="blur" />
+        <feComposite operator="atop" in2="SourceGraphic" />
+      </filter>
+
+      <filter id="outer-glow">
+        <!-- Thicken out the original shape -->
+        <feMorphology
+          operator="dilate"
+          radius="2"
+          in="SourceAlpha"
+          result="thicken"
+        />
+
+        <!-- Use a gaussian blur to create the soft blurriness of the glow -->
+        <feGaussianBlur in="thicken" stdDeviation="5" result="blurred" />
+
+        <!-- Change the colour -->
+        <feFlood flood-color="#db0273" result="glowColor" />
+
+        <!-- Color in the glows -->
+        <feComposite
+          in="glowColor"
+          in2="blurred"
+          operator="in"
+          result="softGlow_colored"
+        />
+
+        <!--	Layer the effects together -->
+        <feMerge>
+          <feMergeNode in="softGlow_colored" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+
+      <filter id="outer-glow1">
+        <!-- Thicken out the original shape -->
+        <feMorphology
+          operator="dilate"
+          radius="20"
+          in="SourceAlpha"
+          result="thicken"
+        />
+
+        <!-- Use a gaussian blur to create the soft blurriness of the glow -->
+        <feGaussianBlur in="thicken" stdDeviation="25" result="blurred" />
+
+        <!-- Change the colour -->
+        <feFlood flood-color="#530139" result="glowColor" />
+
+        <!-- Color in the glows -->
+        <feComposite
+          in="glowColor"
+          in2="blurred"
+          operator="in"
+          result="softGlow_colored"
+        />
+
+        <!--	Layer the effects together -->
+        <feMerge>
+          <feMergeNode in="softGlow_colored" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+  <br />
+  <br />
+  <div class="login-box">
+    <form>
+      <h2>Account Number : 2372846327eghwgrrhgf36723</h2>
+      <div class="user-box">
+        <input type="number" name="" required="" />
+        <label>Enter Receiver account(Empty, if you want to Buy)</label>
+      </div>
+      <div class="user-box">
+        <input type="number" name="" required="" />
+        <label>Enter Amount</label>
+      </div>
+      <div class="user-box">
+        <input type="number" name="" required="" />
+        <label>Enter Fee</label>
+      </div>
+      <br />
+      <br />
+
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Send
+      </a>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Buy
+      </a>
+    </form>
+    <br />
+    <br />
+    <div id="country-selector">
+      <div id="select-box">
+        <input type="checkbox" id="options-view-button" />
+        <div id="select-button" class="selector">
+          <div id="selected-value">
+            <span>{{ network }}</span>
+          </div>
+          <div id="chevrons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-down"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div id="options">
+          {% for i in range(id) %}
+          <div class="option">
+            <a class="label" href="#">{{all_chain[i].name}}</a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </div>
+</div>

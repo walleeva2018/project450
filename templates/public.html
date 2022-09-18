@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block main %}
+<div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="login-box">
+    <h2>Deploy your {{ coin }}</h2>
+    <form method="POST">
+      <div class="page-color">Select Consensus Algorithm</div>
+      <div class="select">
+        <select name="consensus">
+          <option value="pow">Proof of work</option>
+          <option value="pos">Proof of stake</option>
+          <option value="pol">Proof of layer</option>
+          <option value="pbft">Practical Byzantine Fault Tolerance</option>
+          <option value="poa">Proof of AUthority</option>
+        </select>
+      </div>
+
+      <br />
+      <a href="javascript:;" onclick="parentNode.submit();">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Deploy
+      </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

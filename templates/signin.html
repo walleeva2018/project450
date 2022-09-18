@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block main %}
+
+<div id="feedback-form">
+    <h3 class="black-color">Login</h3>
+    <div class="red-color"> {{ reply }}</div>
+    <div>
+      <form method="POST">
+        <input type="text" name="email" placeholder="Email"></input>
+        <input type="password" name="password" placeholder="Password"></input>
+        <button type="submit">Sign In</button>
+        <br>
+        <label for="feedback-notify">Dont Have an account </label>
+        <a href="/user/signup"> Create Account</a>
+      </form>
+    </div>
+  </div>
+{% endblock %}
